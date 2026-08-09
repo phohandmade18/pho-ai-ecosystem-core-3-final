@@ -1,0 +1,24 @@
+[build]
+publish = "public"
+functions = "netlify/functions"
+
+[functions]
+node_bundler = "esbuild"
+
+[[redirects]]
+from = "/oauth/facebook/callback"
+to = "/.netlify/functions/facebook-auth-callback"
+status = 200
+
+[[redirects]]
+from = "/oauth/youtube/callback"
+to = "/.netlify/functions/youtube-auth-callback"
+status = 200
+
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "camera=(), microphone=(), geolocation=()"

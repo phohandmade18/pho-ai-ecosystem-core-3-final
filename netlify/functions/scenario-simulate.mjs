@@ -1,0 +1,1 @@
+export default async(req)=>{const body=await req.json().catch(()=>({}));return Response.json({mode:'rule-based',scenario:body.scenario||'unknown',status:'ready'});};

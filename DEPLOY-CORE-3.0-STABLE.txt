@@ -1,0 +1,21 @@
+PHỐ AI ECOSYSTEM CORE 3.0 STABLE — DEPLOY
+
+Netlify:
+- Branch: main
+- Base directory: để trống
+- Build command: npm run build
+- Publish directory: public
+- Functions directory: netlify/functions
+
+Giữ nguyên Environment Variables hiện tại.
+Không cần thay Supabase chỉ vì nâng từ 2.8 lên 3.0.
+Không cần thêm API mới.
+
+Sau deploy:
+1. Chờ Published.
+2. Mở site.
+3. Nếu còn cache 2.8: DevTools > Application > Storage > Clear site data.
+4. Ctrl + Shift + R.
+5. Kiểm tra: Knowledge Vault, Memory Engine, Learning Brain, Content Score, AI Advisor.
+
+CORE 3.0 STABLE chủ đích CHƯA tích hợp thêm tự động hóa bên ngoài.

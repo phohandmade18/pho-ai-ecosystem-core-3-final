@@ -1,0 +1,42 @@
+PHỐ AI ECOSYSTEM CORE 4.0 — SPRINT 2 FACEBOOK
+
+THỨ TỰ CÀI:
+
+1) SUPABASE
+Mở SQL Editor và chạy:
+supabase/schema-core4-sprint2-facebook.sql
+
+2) NETLIFY ENVIRONMENT VARIABLES
+Kiểm tra phải có:
+FACEBOOK_APP_ID
+FACEBOOK_APP_SECRET
+FACEBOOK_REDIRECT_URI
+APP_BASE_URL
+SUPABASE_URL
+SUPABASE_SECRET_KEY hoặc SUPABASE_SERVICE_ROLE_KEY
+
+LƯU Ý: Sprint 1 health có thể đạt 100 bằng anon key, nhưng Sprint 2 GHI dữ liệu cần server key vì RLS đã bật.
+
+3) GITHUB
+Upload các file:
+netlify/functions/lib/core4-facebook.mjs
+netlify/functions/core4-facebook-status.mjs
+netlify/functions/core4-facebook-sync.mjs
+netlify/functions/core4-facebook-dashboard.mjs
+docs/CORE-4-SPRINT-2-FACEBOOK.md
+
+KHÔNG thay facebook-auth-start.mjs ở bước đầu.
+
+4) COMMIT
+CORE 4.0 Sprint 2 - Facebook Engine
+
+5) TEST SAU DEPLOY
+Mở:
+https://TEN-SITE.netlify.app/.netlify/functions/core4-facebook-status
+
+Nếu ready=true:
+- gọi POST core4-facebook-sync (có thể bấm từ app sau Sprint 2 UI, hoặc dùng DevTools/curl)
+- rồi mở core4-facebook-dashboard.
+
+6) CHỈ KHI META ĐÃ CẤP QUYỀN BỔ SUNG
+Mới cân nhắc thay facebook-auth-start.mjs bằng file OPTIONAL có extra scopes.

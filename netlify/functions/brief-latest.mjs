@@ -1,0 +1,1 @@
+import{json,err}from'./lib/http.mjs';import{sb}from'./lib/supabase.mjs';export default async()=>{try{const r=await sb('executive_briefs?select=*&order=created_at.desc&limit=1');return json({brief:r[0]||null})}catch(e){return err(e.message,500)}};

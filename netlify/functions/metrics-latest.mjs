@@ -1,0 +1,1 @@
+import{json,err}from'./lib/http.mjs';import{sb}from'./lib/supabase.mjs';export default async()=>{try{return json({snapshots:await sb('metric_snapshots?select=*&order=captured_at.desc&limit=30')})}catch(e){return err(e.message,500)}};

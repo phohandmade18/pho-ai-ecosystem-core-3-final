@@ -1,0 +1,14 @@
+{
+  "name": "pho-ai-ecosystem-core-3-0-stable",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo static build"
+  },
+  "dependencies": {
+    "@netlify/functions": "latest"
+  },
+  "description": "PHỐ AI ECOSYSTEM CORE 3.0 STABLE - Autonomous AI Ecosystem"
+}

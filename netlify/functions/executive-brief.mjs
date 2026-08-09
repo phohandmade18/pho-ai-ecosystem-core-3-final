@@ -1,0 +1,1 @@
+export default async()=>Response.json({mode:'mock',version:'1.5',message:'Executive Brief backend scaffold ready.'});

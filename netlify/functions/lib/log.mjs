@@ -1,0 +1,1 @@
+import{sb}from'./supabase.mjs';export async function log(event_type,status,message='',metadata={}){try{await sb('activity_logs',{method:'POST',body:{event_type,status,message,metadata}})}catch{}}

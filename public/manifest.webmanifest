@@ -1,0 +1,16 @@
+{
+  "name": "PHỐ AI ECOSYSTEM CORE 3.0 STABLE",
+  "short_name": "PHỐ AI 3.0",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#061a15",
+  "theme_color": "#063c2f",
+  "icons": [
+    {
+      "src": "/assets/pho-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

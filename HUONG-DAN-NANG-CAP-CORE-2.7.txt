@@ -1,0 +1,31 @@
+PHỐ AI ECOSYSTEM CORE 2.7 — HƯỚNG DẪN NÂNG CẤP
+
+CÁCH AN TOÀN NHẤT:
+1. Sao lưu repository hiện tại.
+2. Giải nén gói CORE 2.7.
+3. Upload/ghi đè các thư mục và file vào repository hiện tại.
+4. KHÔNG xóa Environment Variables trên Netlify.
+5. Commit lên nhánh main.
+6. Netlify tự deploy.
+7. Sau deploy, mở Chrome > Application > Storage > Clear site data một lần nếu còn cache cũ.
+
+FILE/THƯ MỤC QUAN TRỌNG MỚI:
+- public/index.html
+- public/app.js
+- public/styles.css
+- public/sw.js (cache đổi sang CORE 2.7)
+- netlify/functions/knowledge-advisor.mjs
+- supabase/schema-core-2.7-knowledge.sql (TÙY CHỌN, chưa cần chạy ngay)
+
+CÁCH DÙNG KHO TRI THỨC:
+1. Mở menu Kho tri thức AI.
+2. Chọn file .txt từ ChatGPT hoặc dán nội dung.
+3. Chọn nguồn + loại dữ liệu + tags.
+4. Bấm Phân tích & nhập kho.
+5. Sang AI Advisor và đặt câu hỏi.
+6. AI chỉ lấy các mảnh tri thức liên quan nhất.
+
+CORE 2.7 HOẠT ĐỘNG NGAY CẢ KHI CHƯA CHẠY SQL MỚI:
+- Knowledge Vault + Memory Engine dùng localStorage trên thiết bị.
+- AI Advisor dùng OpenAI API hiện có.
+- SQL mới chỉ phục vụ bước Cloud Sync sau này.

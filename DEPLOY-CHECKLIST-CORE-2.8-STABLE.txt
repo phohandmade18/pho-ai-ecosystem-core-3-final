@@ -1,0 +1,47 @@
+PHỐ AI ECOSYSTEM CORE 2.8 STABLE — DEPLOY CHECKLIST
+
+1. GitHub
+- Upload toàn bộ gói STABLE vào repository mới hoặc repository chính.
+- Branch: main
+- Không đưa khóa bí mật thật vào GitHub.
+
+2. Netlify Build settings
+- Base directory: /
+- Build command: npm run build
+- Publish directory: public
+- Functions directory: netlify/functions
+
+3. Environment Variables
+- APP_BASE_URL = tên miền Netlify mới
+- OPENAI_API_KEY
+- OPENAI_MODEL
+- SUPABASE_URL
+- SUPABASE_SECRET_KEY
+- FACEBOOK_APP_ID
+- FACEBOOK_APP_SECRET
+- FACEBOOK_REDIRECT_URI
+- TOKEN_ENCRYPTION_KEY
+
+4. Facebook / Meta
+- Đổi toàn bộ domain cũ sang domain Netlify mới.
+- Valid OAuth Redirect URI phải trùng chính xác FACEBOOK_REDIRECT_URI.
+- Privacy / Terms / Data deletion URL cũng đổi sang domain mới.
+
+5. Supabase
+- Có thể dùng project Supabase hiện tại.
+- CORE 2.8 hoạt động local-first cho Knowledge / Memory / Learning ngay cả khi chưa chạy migration mới.
+- Chỉ chạy schema 2.7 / 2.8 nếu muốn cloud sync các module học và tri thức.
+
+6. Sau deploy
+- Chờ Netlify báo Published.
+- Nếu còn giao diện cũ: Chrome DevTools > Application > Storage > Clear site data.
+- Hard refresh: Ctrl + Shift + R.
+
+7. Kiểm tra bắt buộc
+- Trang chủ mở được.
+- Kho tri thức AI nhập .txt được.
+- Memory Engine lưu được.
+- Learning Brain lưu KPI được.
+- Content Score chấm điểm được.
+- AI Advisor gọi OpenAI được khi API key có credit.
+- Facebook OAuth vẫn hoạt động sau khi thay callback URL.

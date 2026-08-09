@@ -1,0 +1,26 @@
+PHỐ AI ECOSYSTEM CORE 2.8 — LEARNING BRAIN
+
+MỚI:
+- Learning Brain: nhập KPI sau mỗi bài đăng.
+- Hệ thống tự rút kinh nghiệm theo nền tảng, loại nội dung và khung giờ.
+- Content Score: chấm điểm nội dung trước khi đăng.
+- Kinh nghiệm sau đăng được đưa ngược vào Kho tri thức AI.
+- AI Advisor ưu tiên kinh nghiệm thực tế khi trả lời.
+- Xuất backup dữ liệu học JSON.
+- Service Worker cache đổi sang CORE 2.8.
+
+CÁCH NÂNG CẤP:
+1. Giải nén gói UPGRADE.
+2. Upload ghi đè các file trong thư mục public lên GitHub.
+3. Commit vào main.
+4. Chờ Netlify Published.
+5. Nếu còn bản cũ: DevTools > Application > Storage > Clear site data.
+
+KHÔNG CẦN ĐỔI:
+- Facebook OAuth
+- OpenAI API key
+- Supabase hiện tại
+- Meta Redirect URI
+- Netlify Environment Variables
+
+SQL 2.8 là TÙY CHỌN. Bản 2.8 vẫn hoạt động local-first ngay cả khi chưa chạy SQL mới.

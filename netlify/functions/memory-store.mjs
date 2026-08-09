@@ -1,0 +1,1 @@
+export default async(req)=>Response.json({mode:'mock',stored:req.method==='POST'});

@@ -1,0 +1,2 @@
+const CORE27_CACHE='pho-ai-core-3-0-stable-v1';
+const C='pho-core22-v1',A=['/','/index.html','/styles.css','/app.js','/manifest.webmanifest','/assets/pho-logo.png'];self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>c.addAll(A))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));

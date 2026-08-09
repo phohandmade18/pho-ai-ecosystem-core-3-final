@@ -1,0 +1,1 @@
+export default async(req)=>Response.json({mode:'mock',message:'Strategy Brief endpoint ready for OpenAI integration.'});

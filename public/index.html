@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#063c2f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/styles.css">
+<title>PHỐ AI ECOSYSTEM CORE 3.0 STABLE</title>
+</head>
+<body>
+<div class="shell">
+<aside>
+  <div class="brand">
+    <img src="/assets/pho-logo.png" alt="PHỐ AI">
+    <div><b>PHỐ AI ECOSYSTEM</b><span>CORE 3.0 STABLE · AUTONOMOUS AI ECOSYSTEM</span></div>
+  </div>
+  <nav id="nav">
+    <button class="active" data-page="home">🏠 Trang chủ</button>
+    <button data-page="facebook">📘 Facebook Center</button>
+    <button data-page="socialhub">🌐 Social Hub</button>
+    <button data-page="studio">✍️ Content Studio</button>
+    <button data-page="library">🗂️ Kho nội dung</button>
+    <button data-page="knowledge">🧠 Kho tri thức AI</button>
+    <button data-page="memory">🧬 Memory Engine</button>
+    <button data-page="advisor">💬 AI Advisor</button>
+    <button data-page="learning">📚 Learning Brain</button>
+    <button data-page="score">🧪 Content Score</button>
+    <button data-page="architecture">🏗️ Kiến trúc 3.0</button>
+    <button data-page="planner">🗓️ Lịch nội dung</button>
+    <button data-page="connections">🔗 Kết nối kênh</button>
+    <button data-page="kpi">📊 Dữ liệu KPI</button>
+    <button data-page="brief">🧠 Phân tích AI</button>
+    <button data-page="strategy">🧭 Chiến lược</button>
+    <button data-page="budget">💰 Chi phí AI</button>
+    <button data-page="system">⚙️ Kiểm tra hệ thống</button>
+  </nav>
+  <div class="profile"><b>Mạnh Điệp</b><span>Quản trị hệ sinh thái</span></div>
+</aside>
+
+<main>
+<header>
+  <div><h1 id="pageTitle">Trung tâm điều hành</h1><p>Facebook · TikTok · Instagram · YouTube · AI</p></div>
+  <div class="head-actions">
+    <span id="systemPill" class="pill warn">Chưa kiểm tra</span>
+    <button id="syncAllTop">Đồng bộ ngay</button>
+  </div>
+</header>
+
+<section id="home" class="page active">
+  <div class="hero">
+    <div><span>CORE 3.0 STABLE – AUTONOMOUS AI ECOSYSTEM</span><h2>Hệ điều hành AI ổn định cho tri thức, ghi nhớ, lập kế hoạch và ra quyết định</h2><p>Chuẩn hóa dữ liệu, tri thức, bộ nhớ và Learning Brain trong một lõi ổn định, chưa tích hợp tự động bên ngoài.</p></div>
+    <div class="score"><b id="healthScore">--</b><span>Điểm hệ thống</span></div>
+  </div>
+
+  <div class="cards four">
+    <article><span>Trang cá nhân</span><b>Mạnh Điệp</b><small>Xây thương hiệu cá nhân</small></article>
+    <article><span>Group</span><b>Phố Handmade</b><small>Trung tâm cộng đồng</small></article>
+    <article><span>Fanpage</span><b id="fbStatus">Chưa kết nối</b><small id="fbLast">—</small></article>
+    <article><span>Việc hôm nay</span><b id="todayTaskCount">0</b><small>Lịch nội dung cần làm</small></article>
+  </div>
+
+  <div class="grid2">
+    <article class="panel">
+      <div class="panel-head"><h3>Việc cần làm hôm nay</h3><button onclick="openPage('planner')">Mở lịch</button></div>
+      <div id="todayTasks" class="list"></div>
+    </article>
+    <article class="panel">
+      <div class="panel-head"><h3>Executive Brief gần nhất</h3><button onclick="openPage('brief')">Mở phân tích</button></div>
+      <div id="latestBrief" class="brief-box">Chưa có báo cáo AI thật.</div>
+    </article>
+  </div>
+
+  <div class="grid2">
+    <article class="panel"><h3>KPI Facebook mới nhất</h3><div id="fbMetrics" class="metric-grid"></div></article>
+    <article class="panel"><h3>Cảnh báo & cơ hội</h3><div id="homeFindings" class="list"></div></article>
+  </div>
+</section>
+
+<section id="facebook" class="page">
+  <div class="page-head"><div><h2>Facebook Operations Center</h2><p>Ba kênh, ba vai trò, một hệ sinh thái.</p></div><button id="saveChannelPlan">Lưu kế hoạch</button></div>
+
+  <div class="channel-tabs">
+    <button class="channel-tab active" data-channel="personal">👤 Mạnh Điệp</button>
+    <button class="channel-tab" data-channel="group">👥 Group Phố Handmade</button>
+    <button class="channel-tab" data-channel="fanpage">📄 Fanpage Tinh Hoa Quà Tặng</button>
+  </div>
+
+  <div id="personal" class="channel-view active">
+    <div class="grid2">
+      <article class="panel"><h3>Mục tiêu kênh</h3><p>Xây dựng uy tín cá nhân, chia sẻ góc nhìn thật và kéo thành viên chất lượng về Group.</p>
+      <label>Ưu tiên tuần này<textarea data-plan="personal_goal" placeholder="Ví dụ: tăng bình luận và kéo người vào Group"></textarea></label></article>
+      <article class="panel"><h3>Trụ cột nội dung</h3><div class="checklist">
+        <label><input type="checkbox" data-plan="personal_story"> Câu chuyện người làm nghề</label>
+        <label><input type="checkbox" data-plan="personal_view"> Góc nhìn cá nhân</label>
+        <label><input type="checkbox" data-plan="personal_process"> Hậu trường vận hành</label>
+        <label><input type="checkbox" data-plan="personal_invite"> Mời thảo luận trong Group</label>
+      </div></article>
+    </div>
+  </div>
+
+  <div id="group" class="channel-view">
+    <div class="grid2">
+      <article class="panel"><h3>Mục tiêu Group</h3><p>Tăng thảo luận, tôn vinh người làm nghề và giảm nội dung bán hàng lặp lại.</p>
+      <label>Chủ đề nổi bật<textarea data-plan="group_goal" placeholder="Ví dụ: tuần nghệ thuật gấp giấy Origami"></textarea></label></article>
+      <article class="panel"><h3>Nhịp nội dung</h3><div class="checklist">
+        <label><input type="checkbox" data-plan="group_question"> Câu hỏi thảo luận</label>
+        <label><input type="checkbox" data-plan="group_minigame"> Mini game</label>
+        <label><input type="checkbox" data-plan="group_member"> Tôn vinh thành viên</label>
+        <label><input type="checkbox" data-plan="group_knowledge"> Bài kiến thức</label>
+      </div></article>
+    </div>
+  </div>
+
+  <div id="fanpage" class="channel-view">
+    <div class="grid2">
+      <article class="panel"><h3>Mục tiêu Fanpage</h3><p>Xây thương hiệu, kể câu chuyện sản phẩm và tạo nhu cầu mua hàng tự nhiên.</p>
+      <label>Chiến dịch tuần<textarea data-plan="fanpage_goal" placeholder="Ví dụ: quà tặng thủ công mang dấu ấn Việt"></textarea></label></article>
+      <article class="panel"><h3>Định dạng ưu tiên</h3><div class="checklist">
+        <label><input type="checkbox" data-plan="fanpage_reel"> Reel sản phẩm</label>
+        <label><input type="checkbox" data-plan="fanpage_story"> Story hằng ngày</label>
+        <label><input type="checkbox" data-plan="fanpage_album"> Album sản phẩm</label>
+        <label><input type="checkbox" data-plan="fanpage_socialproof"> Phản hồi khách hàng</label>
+      </div></article>
+    </div>
+  </div>
+
+  <article class="panel">
+    <div class="panel-head"><h3>AI tạo 3 phiên bản nội dung</h3><button id="generateVariants">Tạo gợi ý</button></div>
+    <label>Ý tưởng gốc<textarea id="sourceIdea" placeholder="Nhập một ý tưởng, sản phẩm hoặc câu chuyện..."></textarea></label>
+    <div id="variantOutput" class="variant-grid"></div>
+  </article>
+</section>
+
+
+<section id="socialhub" class="page">
+  <div class="page-head"><div><h2>Social Hub</h2><p>Trạng thái kết nối, vai trò và ưu tiên của từng nền tảng.</p></div><button id="refreshSocialHub">Làm mới</button></div>
+  <div class="social-grid">
+    <article class="social-card"><div class="social-head"><b>Facebook</b><span class="pill good">Đã kết nối</span></div><p>Trang cá nhân, Group và Fanpage.</p><div class="social-meta"><span>Vai trò</span><b>Trung tâm cộng đồng</b></div></article>
+    <article class="social-card"><div class="social-head"><b>YouTube</b><span id="ytHubStatus" class="pill warn">Chưa kết nối</span></div><p>Shorts, video dài và dữ liệu xem.</p><div class="social-meta"><span>Vai trò</span><b>Nội dung dài hạn</b></div></article>
+    <article class="social-card"><div class="social-head"><b>TikTok</b><span class="pill warn">Chuẩn bị 2.5.1</span></div><p>Video ngắn, xu hướng và tăng trưởng follower.</p><div class="social-meta"><span>Vai trò</span><b>Tăng độ phủ</b></div></article>
+    <article class="social-card"><div class="social-head"><b>Instagram</b><span class="pill warn">Chuẩn bị 2.5.1</span></div><p>Reels, Story, Feed và hình ảnh thương hiệu.</p><div class="social-meta"><span>Vai trò</span><b>Hình ảnh thương hiệu</b></div></article>
+    <article class="social-card"><div class="social-head"><b>Threads</b><span class="pill warn">Kế hoạch</span></div><p>Nội dung ngắn và thảo luận nhanh.</p><div class="social-meta"><span>Vai trò</span><b>Mở rộng đối thoại</b></div></article>
+    <article class="social-card"><div class="social-head"><b>Pinterest</b><span class="pill warn">Kế hoạch</span></div><p>Kho cảm hứng và lưu lượng tìm kiếm dài hạn.</p><div class="social-meta"><span>Vai trò</span><b>Khám phá sản phẩm</b></div></article>
+  </div>
+</section>
+
+<section id="studio" class="page">
+  <div class="page-head"><div><h2>AI Content Studio</h2><p>Một ý tưởng gốc, nhiều phiên bản phù hợp từng kênh.</p></div><button id="studioGenerate">Tạo bộ nội dung</button></div>
+  <div class="grid2">
+    <article class="panel">
+      <label>Chủ đề hoặc sản phẩm<textarea id="studioTopic" placeholder="Ví dụ: nghệ thuật gấp giấy Origami tạo hình chim hạc"></textarea></label>
+      <label>Mục tiêu<select id="studioGoal"><option>Tăng tương tác</option><option>Xây thương hiệu</option><option>Kéo thành viên vào Group</option><option>Bán hàng nhẹ nhàng</option><option>Giới thiệu sản phẩm</option></select></label>
+      <label>Giọng điệu<select id="studioTone"><option>Nhân văn và truyền cảm hứng</option><option>Gần gũi, đời thường</option><option>Hài hước</option><option>Chuyên gia</option><option>Ngắn gọn, mạnh mẽ</option></select></label>
+      <label>Nền tảng<div class="platform-picks">
+        <label><input type="checkbox" value="personal" checked> Trang cá nhân</label>
+        <label><input type="checkbox" value="group" checked> Group</label>
+        <label><input type="checkbox" value="fanpage" checked> Fanpage</label>
+        <label><input type="checkbox" value="tiktok"> TikTok</label>
+        <label><input type="checkbox" value="instagram"> Instagram</label>
+        <label><input type="checkbox" value="youtube"> YouTube</label>
+      </div></label>
+    </article>
+    <article class="panel">
+      <h3>Bộ công cụ nhanh</h3>
+      <div class="quick-actions">
+        <button data-template="question">Câu hỏi thảo luận</button>
+        <button data-template="reel">Kịch bản Reel</button>
+        <button data-template="story">Story 3 khung</button>
+        <button data-template="minigame">Mini game</button>
+        <button data-template="product">Bài sản phẩm</button>
+        <button data-template="knowledge">Bài kiến thức</button>
+      </div>
+      <p class="muted">Bản 2.5 tạo nội dung cục bộ để dùng ngay. Giai đoạn sau sẽ lưu trực tiếp vào Supabase và gọi AI theo từng mẫu.</p>
+    </article>
+  </div>
+  <div id="studioOutput" class="studio-output"></div>
+</section>
+
+<section id="library" class="page">
+  <div class="page-head"><div><h2>Kho nội dung</h2><p>Lưu các ý tưởng và phiên bản đã tạo trên thiết bị.</p></div><button id="clearLibrary" class="secondary">Xóa kho</button></div>
+  <div class="library-tools"><input id="librarySearch" placeholder="Tìm theo chủ đề hoặc nền tảng..."><select id="libraryFilter"><option value="">Tất cả nền tảng</option><option value="personal">Trang cá nhân</option><option value="group">Group</option><option value="fanpage">Fanpage</option><option value="tiktok">TikTok</option><option value="instagram">Instagram</option><option value="youtube">YouTube</option></select></div>
+  <div id="libraryList" class="library-grid"></div>
+</section>
+
+
+<section id="knowledge" class="page">
+  <div class="page-head">
+    <div>
+      <h2>AI Knowledge Vault</h2>
+      <p>Nhập file .txt từ ChatGPT, tự chia đoạn, gắn chủ đề và biến thành nguồn tri thức có thể tìm lại.</p>
+    </div>
+    <button id="exportKnowledge" class="secondary">Xuất backup JSON</button>
+  </div>
+
+  <div class="grid2">
+    <article class="panel">
+      <h3>1. Nhập tri thức</h3>
+      <label>Chọn file .txt
+        <input id="knowledgeFile" type="file" accept=".txt,text/plain">
+      </label>
+      <label>Hoặc dán nội dung trực tiếp
+        <textarea id="knowledgePaste" placeholder="Dán nội dung ChatGPT, ghi chú, chiến lược, prompt, bài viết..."></textarea>
+      </label>
+      <div class="knowledge-controls">
+        <label>Nguồn
+          <select id="knowledgeSource">
+            <option>ChatGPT</option>
+            <option>Tự viết</option>
+            <option>Facebook cũ</option>
+            <option>Tài liệu nghiên cứu</option>
+            <option>Khác</option>
+          </select>
+        </label>
+        <label>Nhóm dữ liệu
+          <select id="knowledgeType">
+            <option value="content">Nội dung</option>
+            <option value="strategy">Chiến lược</option>
+            <option value="prompt">Prompt</option>
+            <option value="kpi">KPI / Kinh nghiệm</option>
+            <option value="product">Sản phẩm</option>
+            <option value="brand">Phong cách thương hiệu</option>
+          </select>
+        </label>
+      </div>
+      <label>Tags mặc định
+        <input id="knowledgeTags" placeholder="Ví dụ: origami, group, tăng tương tác">
+      </label>
+      <button id="importKnowledge">Phân tích & nhập kho</button>
+      <p class="muted">Bản 2.7 chia nội dung thành các đoạn nhỏ, tránh phải gửi cả file dài cho OpenAI mỗi lần.</p>
+    </article>
+
+    <article class="panel">
+      <h3>2. Thống kê bộ não tri thức</h3>
+      <div class="knowledge-stats">
+        <div><span>Mảnh tri thức</span><b id="knowledgeCount">0</b></div>
+        <div><span>Nguồn</span><b id="knowledgeSources">0</b></div>
+        <div><span>Chủ đề</span><b id="knowledgeTopics">0</b></div>
+        <div><span>Dung lượng</span><b id="knowledgeChars">0</b></div>
+      </div>
+      <h3 class="mt">Chủ đề đang tích lũy</h3>
+      <div id="topicCloud" class="topic-cloud"></div>
+    </article>
+  </div>
+
+  <article class="panel">
+    <div class="panel-head">
+      <h3>3. Tìm trong tri thức</h3>
+      <button id="clearKnowledge" class="secondary">Xóa toàn bộ</button>
+    </div>
+    <div class="library-tools">
+      <input id="knowledgeSearch" placeholder="Ví dụ: mini game origami group">
+      <select id="knowledgeFilter">
+        <option value="">Tất cả loại</option>
+        <option value="content">Nội dung</option>
+        <option value="strategy">Chiến lược</option>
+        <option value="prompt">Prompt</option>
+        <option value="kpi">KPI / Kinh nghiệm</option>
+        <option value="product">Sản phẩm</option>
+        <option value="brand">Phong cách thương hiệu</option>
+      </select>
+    </div>
+    <div id="knowledgeList" class="knowledge-list"></div>
+  </article>
+</section>
+
+<section id="memory" class="page">
+  <div class="page-head">
+    <div><h2>Memory Engine</h2><p>Ghi nhớ phong cách, quy tắc vận hành và kinh nghiệm hiệu quả để AI dùng lại.</p></div>
+    <button id="saveMemory">Lưu bộ nhớ</button>
+  </div>
+  <div class="grid2">
+    <article class="panel">
+      <h3>Phong cách thương hiệu</h3>
+      <label>Phong cách viết<textarea id="memoryVoice" placeholder="Ví dụ: gần gũi, nhân văn, tiêu đề mạnh, không bán hàng quá gắt..."></textarea></label>
+      <label>Quy tắc tiêu đề<textarea id="memoryTitle" placeholder="Ví dụ: ngắn, gây tò mò, ưu tiên câu hỏi..."></textarea></label>
+      <label>CTA thường dùng<textarea id="memoryCTA" placeholder="Ví dụ: mời chia sẻ trải nghiệm, bình luận, lưu bài..."></textarea></label>
+      <label>Hashtag mặc định<input id="memoryHashtags" placeholder="#PhoHandmade #HandmadeViet ..."></label>
+    </article>
+    <article class="panel">
+      <h3>Kinh nghiệm vận hành</h3>
+      <label>Nội dung thường hiệu quả<textarea id="memoryWins" placeholder="Ví dụ: mini game vào tối thứ Năm có bình luận tốt..."></textarea></label>
+      <label>Nội dung cần tránh<textarea id="memoryAvoid" placeholder="Ví dụ: ảnh chữ lặp lại, bài bán hàng liên tục..."></textarea></label>
+      <label>Khung giờ ưu tiên<textarea id="memoryTimes" placeholder="Ví dụ: Group 20:00, Fanpage 10:00..."></textarea></label>
+      <label>Mục tiêu hiện tại<textarea id="memoryGoals" placeholder="Ví dụ: tăng tương tác và thành viên chất lượng..."></textarea></label>
+    </article>
+  </div>
+  <article class="panel">
+    <h3>Memory Snapshot</h3>
+    <pre id="memoryPreview">Chưa có bộ nhớ.</pre>
+  </article>
+</section>
+
+<section id="advisor" class="page">
+  <div class="page-head">
+    <div><h2>AI Advisor</h2><p>Hỏi AI bằng dữ liệu liên quan lấy từ Kho tri thức + Memory Engine, không gửi toàn bộ kho.</p></div>
+    <span id="advisorContextCount" class="pill good">0 nguồn liên quan</span>
+  </div>
+  <div class="advisor-layout">
+    <article class="panel">
+      <label>Câu hỏi
+        <textarea id="advisorQuestion" placeholder="Ví dụ: Hôm nay Group Phố Handmade nên đăng gì để tăng bình luận?"></textarea>
+      </label>
+      <div class="quick-actions">
+        <button class="advisor-prompt">Hôm nay nên đăng gì?</button>
+        <button class="advisor-prompt">Vì sao tương tác giảm?</button>
+        <button class="advisor-prompt">Gợi ý 3 nội dung tuần này</button>
+        <button class="advisor-prompt">Nội dung nào nên tránh?</button>
+      </div>
+      <button id="askAdvisor">Phân tích bằng AI</button>
+      <p class="muted">AI chỉ nhận tối đa các mảnh tri thức phù hợp nhất để giảm token và chi phí.</p>
+    </article>
+    <article class="panel">
+      <h3>Nguồn AI đang tham chiếu</h3>
+      <div id="advisorSources" class="advisor-sources">Chưa có truy vấn.</div>
+    </article>
+  </div>
+  <article class="panel">
+    <h3>Trả lời</h3>
+    <div id="advisorAnswer" class="brief-box">Hãy đặt một câu hỏi.</div>
+  </article>
+</section>
+
+
+<section id="learning" class="page">
+  <div class="page-head">
+    <div>
+      <h2>Learning Brain</h2>
+      <p>Ghi nhận kết quả sau khi đăng, tự rút kinh nghiệm và xếp hạng những gì đang hiệu quả.</p>
+    </div>
+    <button id="exportLearning" class="secondary">Xuất dữ liệu học</button>
+  </div>
+
+  <div class="grid2">
+    <article class="panel">
+      <h3>1. Ghi nhận một kết quả</h3>
+      <label>Nền tảng
+        <select id="expPlatform">
+          <option value="group">Facebook Group</option>
+          <option value="fanpage">Facebook Fanpage</option>
+          <option value="personal">Facebook cá nhân</option>
+          <option value="tiktok">TikTok</option>
+          <option value="instagram">Instagram</option>
+          <option value="youtube">YouTube</option>
+        </select>
+      </label>
+      <label>Loại nội dung
+        <select id="expType">
+          <option value="question">Câu hỏi thảo luận</option>
+          <option value="reel">Reel / Video ngắn</option>
+          <option value="story">Story</option>
+          <option value="minigame">Mini game</option>
+          <option value="product">Bài sản phẩm</option>
+          <option value="knowledge">Bài kiến thức</option>
+          <option value="other">Khác</option>
+        </select>
+      </label>
+      <label>Chủ đề<input id="expTopic" placeholder="Ví dụ: Origami chim hạc"></label>
+      <div class="metric-grid">
+        <label>Reach<input id="expReach" type="number" min="0" value="0"></label>
+        <label>Like<input id="expLikes" type="number" min="0" value="0"></label>
+        <label>Comment<input id="expComments" type="number" min="0" value="0"></label>
+        <label>Share<input id="expShares" type="number" min="0" value="0"></label>
+        <label>View<input id="expViews" type="number" min="0" value="0"></label>
+        <label>Click<input id="expClicks" type="number" min="0" value="0"></label>
+      </div>
+      <label>Giờ đăng<input id="expTime" type="time" value="20:00"></label>
+      <label>Đánh giá của bạn
+        <select id="expRating">
+          <option value="5">Rất hiệu quả</option>
+          <option value="4">Tốt</option>
+          <option value="3">Trung bình</option>
+          <option value="2">Kém</option>
+          <option value="1">Không nên lặp lại</option>
+        </select>
+      </label>
+      <label>Bài học / ghi chú<textarea id="expLesson" placeholder="Ví dụ: câu hỏi ngắn + ảnh sản phẩm thật tạo nhiều bình luận..."></textarea></label>
+      <button id="saveExperience">Lưu & cho hệ thống học</button>
+    </article>
+
+    <article class="panel">
+      <h3>2. Trạng thái học</h3>
+      <div class="knowledge-stats">
+        <div><span>Kinh nghiệm đã lưu</span><b id="expCount">0</b></div>
+        <div><span>Nền tảng có dữ liệu</span><b id="expPlatforms">0</b></div>
+        <div><span>Loại nội dung</span><b id="expTypes">0</b></div>
+        <div><span>Điểm học</span><b id="learningScore">0</b></div>
+      </div>
+      <h3 class="mt">Hệ thống đang học được gì?</h3>
+      <div id="learningInsights" class="learning-insights"></div>
+    </article>
+  </div>
+
+  <article class="panel">
+    <div class="panel-head">
+      <h3>3. Bảng kinh nghiệm</h3>
+      <button id="clearExperiences" class="secondary">Xóa dữ liệu học</button>
+    </div>
+    <div class="library-tools">
+      <input id="expSearch" placeholder="Tìm theo chủ đề, nền tảng hoặc bài học...">
+      <select id="expFilter">
+        <option value="">Tất cả nền tảng</option>
+        <option value="group">Group</option>
+        <option value="fanpage">Fanpage</option>
+        <option value="personal">Trang cá nhân</option>
+        <option value="tiktok">TikTok</option>
+        <option value="instagram">Instagram</option>
+        <option value="youtube">YouTube</option>
+      </select>
+    </div>
+    <div id="experienceList" class="experience-list"></div>
+  </article>
+</section>
+
+<section id="score" class="page">
+  <div class="page-head">
+    <div><h2>AI Content Score</h2><p>Chấm điểm nhanh một ý tưởng trước khi đăng dựa trên cấu trúc nội dung + kinh nghiệm đã tích lũy.</p></div>
+    <button id="scoreContent">Chấm điểm</button>
+  </div>
+  <div class="grid2">
+    <article class="panel">
+      <label>Nền tảng
+        <select id="scorePlatform">
+          <option value="group">Facebook Group</option>
+          <option value="fanpage">Facebook Fanpage</option>
+          <option value="personal">Facebook cá nhân</option>
+          <option value="tiktok">TikTok</option>
+          <option value="instagram">Instagram</option>
+          <option value="youtube">YouTube</option>
+        </select>
+      </label>
+      <label>Loại nội dung
+        <select id="scoreType">
+          <option value="question">Câu hỏi thảo luận</option>
+          <option value="reel">Reel / Video ngắn</option>
+          <option value="story">Story</option>
+          <option value="minigame">Mini game</option>
+          <option value="product">Bài sản phẩm</option>
+          <option value="knowledge">Bài kiến thức</option>
+        </select>
+      </label>
+      <label>Tiêu đề / Hook<input id="scoreHook" placeholder="Nhập tiêu đề hoặc câu mở đầu"></label>
+      <label>Nội dung<textarea id="scoreBody" placeholder="Dán nội dung dự kiến đăng..."></textarea></label>
+      <label>Giờ dự kiến đăng<input id="scoreTime" type="time" value="20:00"></label>
+    </article>
+
+    <article class="panel">
+      <h3>Kết quả chấm điểm</h3>
+      <div class="score-ring"><b id="scoreTotal">0</b><span>/100</span></div>
+      <div class="score-bars">
+        <div><span>Hook</span><progress id="scoreHookBar" max="100" value="0"></progress><b id="scoreHookVal">0</b></div>
+        <div><span>Khả năng bình luận</span><progress id="scoreCommentBar" max="100" value="0"></progress><b id="scoreCommentVal">0</b></div>
+        <div><span>Khả năng chia sẻ</span><progress id="scoreShareBar" max="100" value="0"></progress><b id="scoreShareVal">0</b></div>
+        <div><span>Phù hợp nền tảng</span><progress id="scoreFitBar" max="100" value="0"></progress><b id="scoreFitVal">0</b></div>
+        <div><span>Khớp kinh nghiệm cũ</span><progress id="scoreLearnBar" max="100" value="0"></progress><b id="scoreLearnVal">0</b></div>
+      </div>
+      <div id="scoreAdvice" class="brief-box">Chưa chấm điểm.</div>
+    </article>
+  </div>
+</section>
+
+
+<section id="architecture" class="page">
+  <div class="page-head">
+    <div>
+      <h2>Kiến trúc CORE 3.0 STABLE</h2>
+      <p>Bản nền tảng đóng băng để vận hành ổn định trước khi tích hợp thêm API và tự động hóa.</p>
+    </div>
+    <span class="pill good">STABLE CORE</span>
+  </div>
+
+  <div class="grid2">
+    <article class="panel">
+      <h3>5 bộ não lõi</h3>
+      <div class="brain-grid">
+        <div><b>Knowledge Brain</b><span>Kho tri thức, TXT, phân loại, tìm kiếm, backup.</span></div>
+        <div><b>Memory Brain</b><span>Phong cách, kinh nghiệm, quy tắc vận hành.</span></div>
+        <div><b>Planner Brain</b><span>Lịch nội dung, checklist, kế hoạch tuần.</span></div>
+        <div><b>Content Brain</b><span>Content Studio, Content Score, thư viện nội dung.</span></div>
+        <div><b>Advisor Brain</b><span>Phân tích, Executive Brief, đề xuất hành động.</span></div>
+      </div>
+    </article>
+
+    <article class="panel">
+      <h3>Phạm vi CORE 3.0</h3>
+      <div class="scope-list">
+        <div class="scope-ok">✓ Chạy ổn định trên Netlify</div>
+        <div class="scope-ok">✓ Dữ liệu local-first</div>
+        <div class="scope-ok">✓ Knowledge + Memory + Learning</div>
+        <div class="scope-ok">✓ Planner + Content Score</div>
+        <div class="scope-ok">✓ AI Advisor dùng OpenAI khi cần</div>
+        <div class="scope-no">— Chưa tự đăng bài</div>
+        <div class="scope-no">— Chưa chạy agent nền</div>
+        <div class="scope-no">— Chưa tích hợp Video AI / Voice AI</div>
+      </div>
+    </article>
+  </div>
+
+  <article class="panel">
+    <h3>Chu trình học lõi</h3>
+    <div class="flow-chain">
+      <span>Tri thức</span><b>→</b><span>Memory</span><b>→</b><span>Content</span><b>→</b><span>KPI</span><b>→</b><span>Learning</span><b>→</b><span>Advisor</span>
+    </div>
+    <p class="muted">CORE 3.0 không huấn luyện lại mô hình OpenAI. Hệ thống ngày càng phù hợp hơn nhờ dữ liệu nội bộ và kinh nghiệm tích lũy.</p>
+  </article>
+</section>
+
+<section id="planner" class="page">
+  <div class="page-head"><div><h2>Lịch nội dung đa kênh</h2><p>Lịch tuần lưu ngay trên thiết bị, không ảnh hưởng cấu hình API.</p></div><button id="resetPlanner" class="secondary">Khôi phục mẫu</button></div>
+  <div id="weeklyPlanner" class="planner-grid"></div>
+</section>
+
+<section id="connections" class="page">
+  <div class="page-head"><div><h2>Kết nối kênh</h2><p>OAuth và token chỉ xử lý trong Netlify Functions.</p></div></div>
+  <div class="grid2">
+    <article class="panel"><h3>Facebook Fanpage</h3><p>Đọc danh sách Page và KPI được Meta cấp quyền.</p><button id="connectFacebook">Kết nối Facebook</button><button class="secondary" onclick="checkProvider('facebook')">Kiểm tra</button><pre id="facebookCheck">Chưa kiểm tra</pre></article>
+    <article class="panel"><h3>YouTube</h3><p>Đọc thông tin kênh và Analytics 28 ngày.</p><button id="connectYoutube">Kết nối YouTube</button><button class="secondary" onclick="checkProvider('youtube')">Kiểm tra</button><pre id="youtubeCheck">Chưa kiểm tra</pre></article>
+    <article class="panel disabled-card"><h3>TikTok</h3><p>Chuẩn bị cho CORE 2.5: OAuth, video và KPI.</p><span class="pill warn">Sắp kết nối</span></article>
+    <article class="panel disabled-card"><h3>Instagram</h3><p>Chuẩn bị cho CORE 2.5: Reels, bài đăng và Insights.</p><span class="pill warn">Sắp kết nối</span></article>
+  </div>
+</section>
+
+<section id="kpi" class="page">
+  <div class="page-head"><div><h2>Dữ liệu KPI thật</h2><p>Lịch sử snapshot từ Supabase.</p></div><button id="reloadKpi">Tải lại</button></div>
+  <div id="kpiCards" class="cards four"></div>
+  <article class="panel"><h3>30 snapshot gần nhất</h3><div id="snapshotTable"></div></article>
+</section>
+
+<section id="brief" class="page">
+  <div class="page-head"><div><h2>Phân tích OpenAI</h2><p>Chỉ gọi AI khi ngân sách cho phép.</p></div><button id="createBrief">Tạo Executive Brief</button></div>
+  <article class="panel"><div id="briefContent" class="brief-box">Chưa tạo báo cáo.</div></article>
+</section>
+
+<section id="strategy" class="page">
+  <div class="page-head"><div><h2>Strategy Engine</h2><p>Phát hiện tụt giảm và đưa playbook giải quyết.</p></div><button id="evaluateStrategy">Phân tích snapshot mới</button></div>
+  <div id="findingList" class="list"></div>
+</section>
+
+<section id="budget" class="page">
+  <div class="page-head"><div><h2>AI Budget Guard</h2><p>Kiểm soát chi phí OpenAI theo tháng.</p></div></div>
+  <div class="cards four">
+    <article><span>Đã dùng</span><b id="budgetUsed">$0.00</b><small>Tháng hiện tại</small></article>
+    <article><span>Dự báo</span><b id="budgetForecast">$0.00</b><small>Cuối tháng</small></article>
+    <article><span>Giới hạn</span><b id="budgetLimit">$5.00</b><small>Environment variable</small></article>
+    <article><span>Chế độ</span><b id="budgetMode">—</b><small>Tự điều chỉnh</small></article>
+  </div>
+</section>
+
+<section id="system" class="page">
+  <div class="page-head"><div><h2>Trung tâm sức khỏe hệ thống</h2><p>Kiểm tra Supabase, OpenAI, Meta, YouTube, mã hóa và URL.</p></div><button id="healthBtn">Kiểm tra lại</button></div>
+  <div class="health-summary panel"><div class="health-ring"><b id="healthCenterScore">--</b><span>/100</span></div><div><h3 id="healthSummary">Chưa kiểm tra</h3><p id="healthCheckedAt">—</p></div></div>
+  <div id="healthGrid" class="check-grid"></div>
+  <article class="panel"><div class="panel-head"><h3>Kết quả kỹ thuật</h3><button class="secondary" id="copyHealth">Sao chép</button></div><pre id="healthRaw">Chưa kiểm tra</pre></article>
+</section>
+</main>
+</div>
+<div id="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+import{schedule}from'@netlify/functions';const handler=async()=>{const base=process.env.APP_BASE_URL;if(!base)return new Response('APP_BASE_URL missing',{status:500});await fetch(`${base}/.netlify/functions/openai-strategy`,{method:'POST'});return new Response('ok')};export default schedule('15 15 * * *',handler);

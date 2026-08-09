@@ -1,0 +1,1 @@
+export const json=(data,status=200,headers={})=>new Response(JSON.stringify(data),{status,headers:{'content-type':'application/json; charset=utf-8',...headers}});export const err=(message,status=400,details)=>json({error:message,details},status);export const query=req=>Object.fromEntries(new URL(req.url).searchParams.entries());

@@ -1,0 +1,1 @@
+import{json,err}from'./lib/http.mjs';import{sb}from'./lib/supabase.mjs';export default async()=>{try{return json({logs:await sb('activity_logs?select=*&order=created_at.desc&limit=50')})}catch(e){return err(e.message,500)}};
