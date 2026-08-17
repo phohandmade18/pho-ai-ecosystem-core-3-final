@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PHỐ AI ECOSYSTEM CORE 3.1</title>
+  <link rel="stylesheet" href="/core31.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <strong>PHỐ AI ECOSYSTEM</strong>
+      <small>CORE 3.1 · Smart Input & Smart Calendar</small>
+    </div>
+    <a class="back" href="/">← CORE 3.0</a>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">SMART INPUT • CONTENT INTELLIGENCE • SMART CALENDAR</div>
+        <h1>CORE 3.1</h1>
+        <p>Nhập ảnh hoặc text thô → AI tự phân loại → lưu nội dung → lên lịch → nhắc đúng giờ.</p>
+      </div>
+      <div class="score">3.1</div>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="input">🧠 Smart Input</button>
+      <button class="tab" data-tab="calendar">📅 Smart Calendar</button>
+      <button class="tab" data-tab="library">📚 Dữ liệu đã phân loại</button>
+    </nav>
+
+    <section id="tab-input" class="panel tabpanel active">
+      <div class="grid2">
+        <article class="card">
+          <h2>1. Dán nội dung từ ChatGPT</h2>
+          <textarea id="rawText" rows="12" placeholder="Dán toàn bộ nội dung từ ChatGPT vào đây. Không cần sửa định dạng..."></textarea>
+          <div class="row">
+            <button id="analyzeText">Phân tích & phân bổ</button>
+            <button id="clearText" class="secondary">Xóa</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>2. Phân tích ảnh</h2>
+          <label class="drop">
+            <input id="imageInput" type="file" accept="image/*" multiple>
+            <span>Chọn 1–4 ảnh sản phẩm</span>
+            <small>JPG / PNG / WEBP</small>
+          </label>
+          <div id="preview" class="preview"></div>
+          <button id="analyzeImage">Phân tích ảnh & đề xuất nội dung</button>
+        </article>
+      </div>
+
+      <article class="card">
+        <div class="cardhead">
+          <h2>3. Kết quả Semantic Router</h2>
+          <span id="analysisState" class="pill">Chưa phân tích</span>
+        </div>
+        <div id="structured" class="structured"></div>
+        <div class="row">
+          <button id="saveStructured">Lưu vào kho</button>
+          <button id="sendToCalendar" class="secondary">Đưa sang lịch</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="tab-calendar" class="panel tabpanel">
+      <article class="card">
+        <div class="cardhead">
+          <div>
+            <h2>Smart Calendar</h2>
+            <p>Đúng giờ: phát đúng 2 tiếng chuông ngắn rồi dừng. Không lặp liên tục.</p>
+          </div>
+          <button id="notificationBtn" class="secondary">Cho phép thông báo</button>
+        </div>
+
+        <div class="calendar-form">
+          <input id="calTitle" placeholder="Tiêu đề / nội dung">
+          <select id="calChannel">
+            <option>Group Phố Handmade</option>
+            <option>Fanpage</option>
+            <option>Trang cá nhân</option>
+            <option>YouTube</option>
+            <option>TikTok</option>
+            <option>Pinterest</option>
+          </select>
+          <input id="calDate" type="date">
+          <input id="calTime" type="time">
+          <button id="addSchedule">Thêm lịch</button>
+        </div>
+
+        <div class="reminder-note">
+          <b>Quy tắc chuông CORE 3.1:</b> Khi đến giờ, app phát <b>“ting — ting”</b> một lần duy nhất, sau đó dừng. Không có T+15 phút và không tự lặp chuông.
+        </div>
+
+        <div id="scheduleList"></div>
+      </article>
+    </section>
+
+    <section id="tab-library" class="panel tabpanel">
+      <article class="card">
+        <div class="cardhead">
+          <h2>Kho dữ liệu 3.1</h2>
+          <button id="clearLibrary" class="danger">Xóa kho 3.1</button>
+        </div>
+        <div id="smartLibrary"></div>
+      </article>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="/core31.js"></script>
+</body>
+</html>
