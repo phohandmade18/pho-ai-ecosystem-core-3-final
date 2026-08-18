@@ -2,11 +2,11 @@ const headers = {
   "content-type": "application/json; charset=utf-8"
 };
 
-const json = (status, body) => ({
-  statusCode: status,
-  headers,
-  body: JSON.stringify(body)
-});
+const json = (status, body) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers
+  });
 
 function extractOutputText(data) {
   if (data?.output_text) return data.output_text;
