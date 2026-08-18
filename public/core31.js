@@ -74,8 +74,93 @@ $('sendToCalendar').onclick=()=>{
 };
 function renderLibrary(){
   const rows=getLib();
-  $('smartLibrary').innerHTML=rows.length?rows.map(x=>`<div class="library-item"><b>${esc(x.title||x.topic||'Nội dung')}</b><small>${esc(x.product||'')} · ${esc(x.style||'')} · ${esc(x.channel||'')}</small><p>${esc((x.content||'').slice(0,300))}</p></div>`).join(''):'<p>Chưa có dữ liệu.</p>';
+
+  $('smartLibrary').innerHTML=rows.length
+    ? rows.map(x=>`
+      <div class="library-item" data-id="${x.id}">
+        <b>${esc(x.title||x.topic||'Nội dung')}</b>
+
+        <small>
+          ${esc(x.product||'')}
+          · ${esc(x.style||'')}
+          · ${esc(x.channel||'')}
+        </small>
+
+        <p>${esc((x.content||'').slice(0,300))}</p>
+
+        <div class="actions">
+          <button onclick="viewLibrary('${x.id}')">👁 Xem</button>
+          <button class="secondary" onclick="editLibrary('${x.id}')">✏️ Sửa</button>
+          <button class="secondary" onclick="libraryToCalendar('${x.id}')">📅 Đưa sang lịch</button>
+          <button class="danger" onclick="removeLibrary('${x.id}')">🗑 Xóa</button>
+        </div>
+      </div>
+    `).join('')
+    : '<p>Chưa có dữ liệu.</p>';
 }
+
+window.viewLibrary=id=>{
+  const x=getLib().find(r=>r.id===id);
+  if(!x)return;
+
+  renderStructured(x);
+  document.querySelector('[data-tab="input"]').click();
+  window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+  toast('Đã mở nội dung');
+};
+
+window.editLibrary=id=>{
+  const rows=getLib();
+  const x=rows.find(r=>r.id===id);
+  if(!x)return;
+
+  const title=prompt('Sửa tiêu đề:',x.title||'');
+  if(title===null)return;
+
+  const content=prompt('Sửa nội dung:',x.content||'');
+  if(content===null)return;
+
+  x.title=title.trim();
+  x.content=content.trim();
+  x.updatedAt=new Date().toISOString();
+
+  saveLib(rows);
+  renderLibrary();
+  toast('Đã cập nhật nội dung');
+};
+
+window.libraryToCalendar=id=>{
+  const x=getLib().find(r=>r.id===id);
+  if(!x)return;
+
+  $('calTitle').value=x.title||x.topic||x.product||'Nội dung mới';
+
+  if(x.channel){
+    const opts=[...$('calChannel').options];
+    const hit=opts.find(o=>
+      x.channel.toLowerCase().includes(
+        o.text.toLowerCase().split(' ')[0]
+      )
+    );
+
+    if(hit){
+      $('calChannel').value=hit.value;
+    }
+  }
+
+  document.querySelector('[data-tab="calendar"]').click();
+  toast('Đã chuyển nội dung sang lịch');
+};
+
+window.removeLibrary=id=>{
+  if(!confirm('Xóa riêng nội dung này?'))return;
+
+  const rows=getLib().filter(x=>x.id!==id);
+  saveLib(rows);
+  renderLibrary();
+
+  toast('Đã xóa nội dung');
+};
 $('clearLibrary').onclick=()=>{if(confirm('Xóa toàn bộ kho CORE 3.1?')){localStorage.removeItem(CORE31_LIB);renderLibrary()}};
 
 function getCal(){try{return JSON.parse(localStorage.getItem(CORE31_CAL))||[]}catch{return[]}}
