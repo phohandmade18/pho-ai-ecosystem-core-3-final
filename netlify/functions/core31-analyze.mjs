@@ -67,7 +67,7 @@ export default async (req) => {
       });
     }
 
-    const body = JSON.parse(req.body || "{}");
+    const body = await req.json();
 
     const mode =
       body.mode === "image"
