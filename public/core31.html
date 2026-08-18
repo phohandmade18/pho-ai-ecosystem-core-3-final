@@ -101,14 +101,56 @@
     </section>
 
     <section id="tab-library" class="panel tabpanel">
-      <article class="card">
-        <div class="cardhead">
-          <h2>Kho dữ liệu 3.1</h2>
-          <button id="clearLibrary" class="danger">Xóa kho 3.1</button>
-        </div>
-        <div id="smartLibrary"></div>
-      </article>
-    </section>
+  <article class="card">
+
+    <div class="cardhead">
+      <div>
+        <h2>📚 Kho nội dung & Workflow</h2>
+        <p>Quản lý nội dung từ ý tưởng đến khi đã đăng.</p>
+      </div>
+
+      <button id="clearLibrary" class="danger">
+        Xóa kho 3.1
+      </button>
+    </div>
+
+    <div class="calendar-form">
+
+      <select id="filterStatus">
+        <option value="">Tất cả trạng thái</option>
+        <option value="Ý tưởng">💡 Ý tưởng</option>
+        <option value="Đang chuẩn bị">✍️ Đang chuẩn bị</option>
+        <option value="Đã lên lịch">📅 Đã lên lịch</option>
+        <option value="Đã đăng">✅ Đã đăng</option>
+      </select>
+
+      <select id="filterChannel">
+        <option value="">Tất cả kênh</option>
+        <option>Group Phố Handmade</option>
+        <option>Fanpage</option>
+        <option>Trang cá nhân</option>
+        <option>YouTube</option>
+        <option>TikTok</option>
+        <option>Pinterest</option>
+      </select>
+
+      <input
+        id="filterSearch"
+        type="text"
+        placeholder="🔎 Tìm tiêu đề, sản phẩm..."
+      >
+
+    </div>
+
+    <div id="workflowStats" class="reminder-note">
+      💡 Ý tưởng: 0 · ✍️ Chuẩn bị: 0 ·
+      📅 Lên lịch: 0 · ✅ Đã đăng: 0
+    </div>
+
+    <div id="smartLibrary"></div>
+
+  </article>
+</section>
   </main>
 
   <div id="toast" class="toast"></div>
